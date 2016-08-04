@@ -81,6 +81,74 @@ app.get('/pagecount', function (req, res) {
   }
 });
 
+app.get("/respuestas", function(request,response){
+  var contenido;
+  //response.setHeader('Content-Type', 'application/json');
+  if (!db) {
+    initDb(function(err){});
+  }
+  if (db) {
+
+    //db.collection('respuestas2').find().toArray
+
+    db.collection("respuestas2",function(error,col){
+      //console.log("Tenemos la colección");
+      usuarioCol=col;
+    });
+  
+    usuarioCol.find().toArray(function(err, docs){
+      //console.log("retrieved records:");
+      contenido=docs;
+      response.send(contenido);
+    });
+  }
+  else{
+    response.send('{error:"No se ha inicializado db"}');
+  }
+});
+
+app.post("/peticion",function(request,response){
+  var body='';
+    var resultado;//=JSON.parse(body);
+  //console.log("petición post recibida");
+  request.on('data', function(chunk) {
+    
+    body+=chunk;//chunk.toString();      
+    resultado=JSON.parse(body);
+    //console.log(resultado);
+    });
+    request.on('end', function() {
+      // empty 200 OK response for now    
+      response.writeHead(200, "OK", {'Content-Type': 'text/html'});     
+      response.end();
+
+      console.log(resultado);
+    });
+    if (!db) {
+    initDb(function(err){});
+    }
+    if (db) {
+
+      db.collection("respuestas2",function(error,col){
+        //console.log("Tenemos la colección");
+        usuarioCol=col;
+      });
+      usuarioCol.insert(resultado,function(error){
+            if(error){
+              console.log("Hubo un error");
+            }
+            else{
+              console.log("Elemento insertado");
+            }
+          });
+    }
+    else
+    { 
+      response.send('{error:"No se ha inicializado db"}');
+    }
+});
+
+
 // error handling
 app.use(function(err, req, res, next){
   console.error(err.stack);
