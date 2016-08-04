@@ -128,11 +128,12 @@ app.post("/peticion",function(request,response){
     initDb(function(err){});
     }
     if (db) {
+      var col = db.collection('respuestas2');
 
-      db.collection("respuestas2",function(error,col){
-        //console.log("Tenemos la colección");
-        usuarioCol=col;
-      });
+      //db.collection("respuestas2",function(error,col){
+       // //console.log("Tenemos la colección");
+      //  usuarioCol=col;
+      //});
       usuarioCol.insert(resultado,function(error){
             if(error){
               console.log("Hubo un error");
