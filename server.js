@@ -59,7 +59,7 @@ var initDb = function(callback) {
 };
 
 app.get('/', function (req, res) {
-  var contenido=fs.readFileSync("quest-mobile.html");
+  var contenido=fs.readFileSync("./quest-mobile.html");
   res.setHeader("Content-Type","text/html");
   res.send(contenido);
 });
