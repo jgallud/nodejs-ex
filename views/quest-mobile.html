@@ -39,6 +39,7 @@
 					'readEmoticons':$('select[name=readEmoticons]').val(),
 					'entender':$('select[name=entender]').val(),
 					'where':chk2,//$('#checkbox2[]:checked').val(),
+					'veoBien':$('select[name=veoBien]').val(),
 					'automated':$('select[name=automated]').val(),
 				};
 				//console.log(datos);
@@ -117,6 +118,13 @@
 		<option value="noSe">Por que no se cómo utilizarlos</option>
 		<option value="otra">No los uso porque no los distingo bien</option>
 		<option value="siUso">Si que utilizo emoticonos</option>
+	</select>
+	<span class="clearfix"></span>
+</div>
+<div class="element-select"><label class="title">¿Distingues bien los emoticonos en el menu?<span class="required">*</span></label>		<select name="veoBien">
+		<option value="None">---</option>
+		<option value="no">No, son muy pequeños</option>
+		<option value="si">Si</option>
 	</select>
 	<span class="clearfix"></span>
 </div>

@@ -38,6 +38,7 @@
 					'razonesNo':$('select[name=razonesNo]').val(),
 					'readEmoticons':$('select[name=readEmoticons]').val(),
 					'animated':$('select[name=animated]').val(),
+					'veoBien':$('select[name=veoBien]').val(),
 					'automated':$('select[name=automated]').val(),
 					'where':chk2,//$('#checkbox2[]:checked').val(),
 				};
@@ -74,9 +75,9 @@
 
 <div id="main">
 <!-- Start Formoid form-->
-<link rel="stylesheet" href="https://drive.google.com/open?id=0B4m2qQWzudNzbzR2X05ibGRvMG8/formoid-default-skyblue.css" type="text/css" />
-<script type="text/javascript" src="quest-mobile_files/formoid1/jquery.min.js"></script>
-<form class="formoid-default-skyblue" style="background-color:#ffffff;font-size:14px;font-family:'Open Sans','Helvetica Neue','Helvetica',Arial,Verdana,sans-serif;color:#666666;max-width:900px;min-width:150px" name="frm" action="/peticion" method="post"><div class="title"><h2>About the use of emoticons in messaging apps</h2><a href="quest-mobile.html"><img src="https://drive.google.com/open?id=0B4m2qQWzudNzbzR2X05ibGRvMG8/spanish.jpg" height="42"/></a><img src="./emoticonos.png" height="42"/></div>
+<link rel="stylesheet" href="formoid-default-skyblue.css" type="text/css" />
+<script type="text/javascript" src="formoid1/jquery.min.js"></script>
+<form class="formoid-default-skyblue" style="background-color:#ffffff;font-size:14px;font-family:'Open Sans','Helvetica Neue','Helvetica',Arial,Verdana,sans-serif;color:#666666;max-width:900px;min-width:150px" name="frm" action="/peticion" method="post"><div class="title"><h2>About the use of emoticons in messaging apps</h2><a href="quest-mobile.html"><img src="spanish.jpg" height="42"/></a><img src="./emoticonos.png" height="42"/></div>
 	<div class="element-number"><label class="title">Age</label><input class="large" type="text" min="15" max="100" name="age"  value=""/></div>
 	<div class="element-select"><label class="title">Gender<span class="required">*</span></label><div class="large"><span><select name="select1" required="required">
 		<option value="None">---</option>
@@ -117,6 +118,13 @@
 		<option value="noSe">I do not know how to use it</option>
 		<option value="otra">I do not use them because other reason</option>
 		<option value="siUso">I do use emoticons</option>
+	</select>
+	<span class="clearfix"></span>
+</div>
+<div class="element-select"><label class="title">Do you distinguish clearly the emoticons?<span class="required">*</span></label>		<select name="veoBien">
+		<option value="None">---</option>
+		<option value="no">No, they appear very small</option>
+		<option value="si">Yes</option>
 	</select>
 	<span class="clearfix"></span>
 </div>
