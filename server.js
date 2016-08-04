@@ -109,7 +109,7 @@ app.get("/respuestas", function(request,response){
 
 app.post("/peticion",function(request,response){
   var body='';
-    var resultado;//=JSON.parse(body);
+  var resultado;//=JSON.parse(body);
   //console.log("petición post recibida");
   request.on('data', function(chunk) {
     
@@ -134,7 +134,7 @@ app.post("/peticion",function(request,response){
        // //console.log("Tenemos la colección");
       //  usuarioCol=col;
       //});
-      usuarioCol.insert(resultado,function(error){
+      col.insert(resultado,function(error){
             if(error){
               console.log("Hubo un error");
             }
