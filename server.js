@@ -7,8 +7,8 @@ var express = require('express'),
     
 Object.assign=require('object-assign')
 
-app.engine('html', require('ejs').renderFile);
-app.use(morgan('combined'))
+//app.engine('html', require('ejs').renderFile);
+//app.use(morgan('combined'))
 
 var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
     ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0',
@@ -61,7 +61,7 @@ var initDb = function(callback) {
 //app.use('/',exp.static(__dirname));
 
 app.get('/', function (req, res) {
-  var contenido=fs.readFileSync(process.env.OPENSHIFT_HOME_DIR+"/views/quest-mobile.html");
+  var contenido=fs.readFileSync("views/quest-mobile.html");
   res.setHeader("Content-Type","text/html");
   res.send(contenido);
 });
