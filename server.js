@@ -63,7 +63,7 @@ var initDb = function(callback) {
 app.use(express.static('views'));
 
 app.get('/', function (req, res) {
-  var contenido=fs.readFileSync("views/quest-mobile.html");
+  var contenido=fs.readFileSync("quest-mobile.html");
   res.setHeader("Content-Type","text/html");
   res.send(contenido);
 });
