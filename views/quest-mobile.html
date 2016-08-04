@@ -52,11 +52,11 @@
 					success:function(resp){
 						$('.submit').remove();
 						$('#main form').remove();
-						$('#status').html('<img src=views/ok.png height="42"/> Muchas gracias');
+						$('#status').html('<img src=ok.png height="42"/> Muchas gracias');
 						console.log(resp)
 					},
 					error:function(jqXHR,estado,error){
-						$('#status').html('<img src=views/nook.png height="42" /> Vaaaaaya');	
+						$('#status').html('<img src=nook.png height="42" /> Vaaaaaya');	
 						console.log(estado);
 						console.log(error)
 					},
@@ -74,9 +74,9 @@
 
 <div id="main">
 <!-- Start Formoid form-->
-<link rel="stylesheet" href="https://drive.google.com/open?id=0B4m2qQWzudNzbzR2X05ibGRvMG8/formoid-default-skyblue.css" type="text/css" />
-<script type="text/javascript" src="http://www.upler.com/test/formoid_files/formoid1/jquery.min.js"></script>
-<form class="formoid-default-skyblue" style="background-color:#ffffff;font-size:14px;font-family:'Open Sans','Helvetica Neue','Helvetica',Arial,Verdana,sans-serif;color:#666666;max-width:900px;min-width:150px" name="frm" action="/peticion" method="post"><div class="title"><h2>Sobre el uso de emoticonos en aplicaciones de mensajes</h2><a href="quest-mobile-eng.html"><img src="https://raw.githubusercontent.com/jgallud/nodejs-ex/master/views/inglesa.jpg" height="42"/></a><img src="https://github.com/jgallud/nodejs-ex/raw/master/views/emoticonos.png" height="42"/></div>
+<link rel="stylesheet" href="formoid-default-skyblue.css" type="text/css" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<form class="formoid-default-skyblue" style="background-color:#ffffff;font-size:14px;font-family:'Open Sans','Helvetica Neue','Helvetica',Arial,Verdana,sans-serif;color:#666666;max-width:900px;min-width:150px" name="frm" action="/peticion" method="post"><div class="title"><h2>Sobre el uso de emoticonos en aplicaciones de mensajes</h2><a href="quest-mobile-eng.html"><img src="inglesa.jpg" height="42"/></a><img src="emoticonos.png" height="42"/></div>
 	<div class="element-number"><label class="title">Edad</label><input class="large" type="text" min="15" max="100" name="age"  value=""/></div>
 	<div class="element-select"><label class="title">Sexo<span class="required">*</span></label><div class="large"><span><select name="select1" required="required">
 		<option value="None">---</option>
