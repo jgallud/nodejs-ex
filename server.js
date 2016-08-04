@@ -59,7 +59,9 @@ var initDb = function(callback) {
 };
 
 app.get('/', function (req, res) {
-  res.send('quest-mobile.html');
+  var contenido=fs.readFileSync("quest-mobile.html");
+  res.setHeader("Content-Type","text/html");
+  res.send(contenido);
 });
 
 app.get('/pagecount', function (req, res) {
