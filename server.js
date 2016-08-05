@@ -136,8 +136,9 @@ app.post("/peticion2",function(request,response){
     }
   });
   request.on('end',function(){
-    response.writeHead(200, "OK", {'Content-Type': 'text/html'});     
-    response.end();
+    var contenido=fs.readFileSync("views/gracias.html");
+    response.setHeader("Content-Type","text/html");
+    response.send(contenido);
     console.log(resultado);
   });
 });
