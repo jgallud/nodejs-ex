@@ -46,10 +46,67 @@
       <option value="indf">indiferente</option>
     </select>
   </div>
-    <div class="checkbox">
-      <label><input type="checkbox" name="checkbox" value="rem"> Remember me</label>
-    </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+  <div class="form-group">
+    <label for="entender">¿Entiendes los mensajes que contienen emoticonos?</label>
+    <select class="form-control" name="entender" id="entender">
+      <option value="None">---</option>
+      <option value="yes">si, entiendo la mayoría de ellos</option>
+      <option value="dudo">no estoy seguro de si interpreto bien su significado</option>
+      <option value="pregunto">suelo preguntar el significado de los que no conozco</option>
+      <option value="pocos">entiendo solo unos pocos (reir, llorar y poco mas)</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="writeEmoticons">¿Sueles escribir mensajes utilizando emoticonos?</label>    
+    <select class="form-control" name="writeEmoticons" id="writeEmoticons">
+      <option value="None">---</option>
+      <option value="yes">Si</option>
+      <option value="no">No</option>
+      <option value="sometimes">En ocasiones</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="razonableNo">No utilizo emoticonos por:</label>
+    <select class="form-control" name="razonesNo" id="razonableNo">
+      <option value="None">---</option>
+      <option value="prisas">Se pierde tiempo</option>
+      <option value="noSerio">Me parece poco serio</option>
+      <option value="noSe">Por que no se cómo utilizarlos</option>
+      <option value="otra">No los uso porque no los distingo bien</option>
+      <option value="siUso">Si que utilizo emoticonos</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="veoBien">¿Distingues bien los emoticonos en el menu?</label>
+    <select class="form-control" name="veoBien" id="veoBien">
+      <option value="None">---</option>
+      <option value="no">No, son muy pequeños</option>
+      <option value="si">Si</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="automated">¿Utilizas emoticonos desde un menu o los escribes directamente?</label>
+    <select class="form-control" name="automated" id="automated">
+      <option value="None">---</option>
+      <option value="menu">Utilizo el menu</option>
+      <option value="direct">Escribo emoticonos sin usar el menu</option>
+      <option value="menuYdirect">Ambos: menu y directamente</option>
+      <option value="indf">No uso emoticonos</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <p><label class="title">Indica dónde (dispositivo) sueles escribir con emoticonos</label></p>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox1" name="chechbox2" value="mobile"> Movil
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox2" name="chechbox2" value="desktop"> PC
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox3" name="chechbox2" value="none"> En ninguno
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
   </form>
 </div>
 
