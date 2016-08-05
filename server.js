@@ -110,25 +110,32 @@ app.get("/respuestas", function(request,response){
 });
 
 app.post("/peticion2",function(request,response){
-  resultado=JSON.parse(request.body);
-  if (!db) {
-    initDb(function(err){});
-  }
-  if (db) {
-    var col = db.collection('respuestas2');
-    col.insert(resultado,function(error){
-            if(error){
-              console.log("Hubo un error");
-            }
-            else{
-              console.log("Elemento insertado");
-            }
-    });
-  }
-  else
-  { 
-    response.send('{error:"No se ha inicializado db"}');
-  }
+  var resultado;
+  var datos="";
+  request.on('data',function(chunk){
+    datos += chunk;
+  });
+  request.on('end',function(){
+    resultado=JSON.parse(datos);
+    if (!db) {
+      initDb(function(err){});
+    }
+    if (db) {
+      var col = db.collection('respuestas2');
+      col.insert(resultado,function(error){
+              if(error){
+                console.log("Hubo un error");
+              }
+              else{
+                console.log("Elemento insertado");
+              }
+      });
+    }
+    else
+    { 
+      response.send('{error:"No se ha inicializado db"}');
+    }
+  });
 });
 
 app.post("/peticion",function(request,response){
