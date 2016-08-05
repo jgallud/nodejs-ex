@@ -110,7 +110,7 @@ app.get("/respuestas", function(request,response){
 });
 
 app.post("/peticion2",function(request,response){
-  resultado=JSON.parse(body);
+  resultado=JSON.parse(request.body);
   if (!db) {
     initDb(function(err){});
   }
