@@ -3,6 +3,7 @@ var express = require('express'),
     fs      = require('fs'),
     app     = express(),
     eps     = require('ejs'),
+    querystring = require('querystring'),
     morgan  = require('morgan');
     
 Object.assign=require('object-assign')
@@ -115,7 +116,7 @@ app.post("/peticion2",function(request,response){
   var datos="";
   request.on('data',function(chunk){
     datos += chunk;
-    resultado=JSON.parse(datos);
+    resultado=querystring.parse(datos);
     if (!db) {
       initDb(function(err){});
     }
