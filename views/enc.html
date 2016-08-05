@@ -6,78 +6,13 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-<script>
-    $(document).on('ready',function(){
-      var pet=$('#main form').attr('action');
-      var met=$('#main form').attr('method');
-      //var ed,se,pr,us,ms,con,con2,no,num,inte,cont; 
-      var target=document.getElementById("#status");
-      function obtenerValoresCheckbox(nombre)
-      {
-        var checkboxes = document.getElementsByName(nombre);
-        var vals = "";
-        for (var i=0, n=checkboxes.length;i<n;i++) {
-          if (checkboxes[i].checked) 
-          {
-          vals += checkboxes[i].value+",";
-          }
-        }
-        //if (val) val = val.substring(1);
-        return vals;
-      }
-      $('#main form').submit(function(e){
-        e.preventDefault();
-        var chk=obtenerValoresCheckbox('checkbox');
-        var chk1=obtenerValoresCheckbox('checkbox1[]');
-        var chk2=obtenerValoresCheckbox('checkbox2[]');
-
-        var datos={
-          'edad':$('input[name=age]').val(),
-          'sexo':$('select[name=select1]').val(),
-          'usos':chk,//$('checkbox[name=checkbox').val(),
-          'writeEmoticons':$('select[name=writeEmoticons]').val(),
-          'razonesNo':$('select[name=razonesNo]').val(),
-          'readEmoticons':$('select[name=readEmoticons]').val(),
-          'entender':$('select[name=entender]').val(),
-          'where':chk2,//$('#checkbox2[]:checked').val(),
-          'veoBien':$('select[name=veoBien]').val(),
-          'automated':$('select[name=automated]').val(),
-        };
-        //console.log(datos);
-        $.ajax({
-          url:"/peticion",
-          type:"post",
-          contentType:'application/json',
-          data: JSON.stringify(datos),//JSON.stringify({edad:ed,sexo:se,profesion:pr,movPda:mv,prefSep:sep,usos:us,prgMsg:ms,numContTot:con,numConReales:con2,tipoNot:no,numNot:num,interrumpo:inte}),
-          //$('#main form').serialize(), //esta es una manera de enviarlo
-          //data:{nombre:nom,mail:m,mensaje:msj},
-          success:function(resp){
-            $('.submit').remove();
-            $('#main form').remove();
-            $('#status').html('<img src=ok.png height="42"/> Muchas gracias');
-            console.log(resp)
-          },
-          error:function(jqXHR,estado,error){
-            $('#status').html('<img src=nook.png height="42" /> Vaaaaaya'); 
-            console.log(estado);
-            console.log(error)
-          },
-          complete:function(jqXHR,estado){
-            console.log(estado);
-          },
-          timeout:10000
-        })
-      })
-    })
-  </script> 
 </head>
 </head>
 <body>
 
 <div class="container">
   <h2>Sobre el uso de emoticonos en aplicaciones de mensajes</h2>
-  <form role="form" name="frm" action="/peticion" method="post">
+  <form role="form" name="frm" action="/peticion2" method="post">
     <div class="form-group"><img class="img-responsive" src="emoticonos.png" height="42"/><a href="quest-mobile-eng.html"><img src="inglesa.jpg" height="42"/></a></div>
     <div class="form-group">
       <label for="title">Edad</label>

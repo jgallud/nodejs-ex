@@ -109,6 +109,28 @@ app.get("/respuestas", function(request,response){
   }
 });
 
+app.post("/peticion2",function(request,response){
+  resultado=JSON.parse(body);
+  if (!db) {
+    initDb(function(err){});
+  }
+  if (db) {
+    var col = db.collection('respuestas2');
+    col.insert(resultado,function(error){
+            if(error){
+              console.log("Hubo un error");
+            }
+            else{
+              console.log("Elemento insertado");
+            }
+    });
+  }
+  else
+  { 
+    response.send('{error:"No se ha inicializado db"}');
+  }
+});
+
 app.post("/peticion",function(request,response){
   var body='';
   var resultado;//=JSON.parse(body);
