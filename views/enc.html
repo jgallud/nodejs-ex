@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -76,22 +77,43 @@
 
 <div class="container">
   <h2>Sobre el uso de emoticonos en aplicaciones de mensajes</h2>
-  <form role="form" action="/peticion" method="post">
+  <form role="form" name="frm" action="/peticion" method="post">
     <div class="form-group"><img class="img-responsive" src="emoticonos.png" height="42"/><a href="quest-mobile-eng.html"><img src="inglesa.jpg" height="42"/></a></div>
     <div class="form-group">
       <label for="title">Edad</label>
       <input type="title" class="form-control" type="text" min="15" max="100" name="age"  value="" placeholder="Enter your age"/>
   </div>
   <div class="form-group">
-      <label for="email">Email:</label>
-      <input type="email" class="form-control" id="email" placeholder="Enter email">
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-    </div>
-    <div class="checkbox" name="checkbox">
-      <label><input type="checkbox"> Remember me</label>
+      <label for="sel">Sexo: </label>
+      <select class="form-control" name="select1" id="sel">
+        <option value="None">---</option>
+        <option value="Mujer">Mujer</option>
+        <option value="Varon">Hombre</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <p><label class="title">¿Qué aplicación de mensajes utilizas?</label></p>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox1" value="whatsapp"> WhatsApp
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox2" value="skype"> Skype
+    </label>
+    <label class="checkbox-inline">
+      <input type="checkbox" id="inlineCheckbox3" value="fcbkMsg"> Facebook Msg
+    </label>
+  </div>
+  <div class="form-group">  
+    <label for="readEmoticons">¿Te gusta leer mensajes que contienen emoticonos?</label>
+    <select class="form-control" name="readEmoticons">
+      <option value="None">---</option>
+      <option value="yes">si</option>
+      <option value="no">no</option>
+      <option value="indf">indiferente</option>
+    </select>
+  </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="checkbox" value="rem"> Remember me</label>
     </div>
     <button type="submit" class="btn btn-default">Submit</button>
   </form>
