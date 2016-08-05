@@ -114,8 +114,6 @@ app.post("/peticion2",function(request,response){
   var datos="";
   request.on('data',function(chunk){
     datos += chunk;
-  });
-  request.on('end',function(){
     resultado=JSON.parse(datos);
     if (!db) {
       initDb(function(err){});
@@ -135,6 +133,11 @@ app.post("/peticion2",function(request,response){
     { 
       response.send('{error:"No se ha inicializado db"}');
     }
+  });
+  request.on('end',function(){
+    response.writeHead(200, "OK", {'Content-Type': 'text/html'});     
+    response.end();
+    console.log(resultado);
   });
 });
 
