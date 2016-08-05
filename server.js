@@ -62,7 +62,6 @@ var initDb = function(callback) {
 //app.use('/',exp.static(__dirname));
 
 app.use(express.static('views'));
-app.use(express.bodyParser());
 
 app.get('/', function (req, res) {
   var contenido=fs.readFileSync("views/quest-mobile.html");
