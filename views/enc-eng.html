@@ -26,6 +26,79 @@
         <option value="Varon">Male</option>
       </select>
   </div>
+    <div class="form-group">
+      <label for="sel2">Do you use technology?: </label>
+      <select class="form-control" name="tecnologia" id="sel2">
+        <option value="None">Do not answer</option>
+        <option value="movil">Mobile</option>
+        <option value="pc">Computer</option>
+        <option value="mobileYpc">Mobile and computer</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label for="sel3">Do you use emoticons?: </label>
+      <select class="form-control" name="uso" id="sel3">
+        <option value="None">Do not answer</option>
+        <option value="siEm">Yes</option>
+        <option value="noEm">No</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label for="sel4">What frecuency do you use emoticons?: </label>
+      <select class="form-control" name="frecuencia" id="sel4">
+        <option value="None">Do not answer</option>
+        <option value="siempre">Always</option>
+        <option value="muchasVeces">Many times</option>
+        <option value="ocasional">Rarely</option>
+        <option value="nunca">Never</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label for="sel5">Do you consider that emoticons are useful?: </label>
+      <select class="form-control" name="utilidad" id="sel5">
+        <option value="None">Do not answer</option>
+        <option value="si">Yes</option>
+        <option value="mucasVeces">Sometimes they are useful</option>
+        <option value="pocasVeces">Rarely they are useful</option>
+        <option value="no">No</option>
+      </select>
+  </div>
+    <div class="form-group">
+      <label for="sel5">Do you think emoticons are well employed?: </label>
+      <select class="form-control" name="usoAdecuado" id="sel5">
+        <option value="None">Do not answer</option>
+        <option value="si">Yes</option>
+        <option value="no">No</option>
+      </select>
+  </div>
+    <div class="form-group">
+      <label for="sel6">Do you consider that the meaning of emoticonos are clear?: </label>
+      <select class="form-control" name="significado" id="sel6">
+        <option value="None">Do not answer</option>
+        <option value="evidente">All emoticons are self-explained</option>
+        <option value="algunos">Only a few have a clear meaning</option>
+        <option value="ninguno">I do not understand the meaning of most of them</option>
+      </select>
+  </div>
+    <div class="form-group">
+      <label for="sel7">Do you distinguish the emoticons?: </label>
+      <select class="form-control" name="seVen" id="sel7">
+        <option value="None">Do not answer</option>
+        <option value="si">Yes, I distinguish all of them </option>
+        <option value="chat">I only distinguish them in a chat</option>
+        <option value="menu">I only distinguish them in the menu</option>
+        <option value="nunca">No, I never distinguish them</option>
+      </select>
+  </div>
+  <div class="form-group">
+      <label for="sel9">Do you agree with the size of emoticons?: </label>
+      <select class="form-control" name="tam" id="sel9">
+        <option value="None">Do not answer</option>
+        <option value="grandes">They are too big</option>
+        <option value="okTam">Their size is ok</option>
+        <option value="peq">They are too small</option>
+      </select>
+  </div>
   <div class="form-group">
     <p><label class="title">What messaging application do you use?</label></p>
     <label class="checkbox-inline">
@@ -43,63 +116,6 @@
     <label class="checkbox-inline">
       <input type="checkbox" id="inlineCheckbox3" name="chechbox" value="other"> Other
     </label>
-  </div>
-  <div class="form-group">  
-    <label for="readEmoticons">Do you like to read messages with emoticons?</label>
-    <select class="form-control" name="readEmoticons">
-      <option value="None">---</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-      <option value="indf">Indifferent</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="entender">Are you able to understand chats with emoticons?</label>
-    <select class="form-control" name="entender" id="entender">
-      <option value="None">---</option>
-      <option value="yes">Yes, most of them</option>
-      <option value="dudo">No, I do not understand them</option>
-      <option value="pregunto">I usually try to guess the meaning</option>
-      <option value="pocos">I only understand a few of them</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="writeEmoticons">Do you like to write using emoticons?</label>    
-    <select class="form-control" name="writeEmoticons" id="writeEmoticons">
-      <option value="None">---</option>
-      <option value="yes">Yes</option>
-      <option value="no">No</option>
-      <option value="sometimes">Sometimes</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="razonableNo">I do not like using emoticons:</label>
-    <select class="form-control" name="razonesNo" id="razonableNo">
-      <option value="None">---</option>
-      <option value="prisas">It is a waste of time</option>
-      <option value="noSerio">It is not serious</option>
-      <option value="noSe">I do not know how to use it</option>
-      <option value="otra">I do not use them because other reason</option>
-      <option value="siUso">I do use emoticons</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="veoBien">Do you distinguish clearly the emoticons on the menu?</label>
-    <select class="form-control" name="veoBien" id="veoBien">
-      <option value="None">---</option>
-      <option value="no">No, they are too small</option>
-      <option value="si">Yes I do</option>
-    </select>
-  </div>
-  <div class="form-group">
-    <label for="automated">Do you select emoticons from a menu or write them directly?</label>
-    <select class="form-control" name="automated" id="automated">
-      <option value="None">---</option>
-      <option value="menu">I use the menu</option>
-    <option value="direct">I write them without menu</option>
-    <option value="menuYdirect">Both: with and without menu</option>
-    <option value="indf">I do not use emoticons</option>
-    </select>
   </div>
   <div class="form-group">
     <p><label class="title">Indicate where (device) do you use to write emoticons</label></p>
